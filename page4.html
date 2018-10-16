@@ -1,0 +1,57 @@
+<html><head>
+    <meta  content="text/html; charset="UTF-8" />
+    <link rel="stylesheet" type="text/css" href="style.css" >
+
+</head>
+<body background="background.jpg">
+
+<script language = "JavaScript">
+  function getParameterByName(name, url) {
+    if (!url) url = window.location.href;
+    name = name.replace(/[\[\]]/g, '\\$&');
+    var regex = new RegExp('[?&]' + name + '(=([^&#]*)|&|#|$)'),
+                results = regex.exec(url);
+    if (!results) return null;
+     if (!results[2]) return '';
+     return decodeURIComponent(results[2].replace(/\+/g, ' '));
+  }
+  
+
+  var result = getParameterByName("result")
+  if (result != "correct") {
+    var password = "final";
+    var x = prompt("What is the answer ","");
+    if (x == password) {
+        alert("Correct");
+        window.location = "page4.html?result=correct";
+    }
+
+    else {
+        alert("Wrong");
+        window.location = "page3.html";
+    }
+  }
+</script>
+
+
+<script>
+function myFunction() {
+    var r = document.getElementById('myDIV');
+    if (r.style.display === 'none') {
+        r.style.display = 'block';
+    } else {
+        r.style.display = 'none';
+    }
+}
+</script>
+
+<button onclick="myFunction()">reveal</button>
+<center>
+<div id="myDIV" style="display:none;">
+
+  <p> CONGRATULATIONS YOU HAVE SOLVED THE PUZZLES</p>
+  <p> Code is: 420 </p>
+</div>
+</center>
+</body>
+</html>

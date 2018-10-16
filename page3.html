@@ -1,0 +1,62 @@
+<html>
+<head>
+    <meta  content="text/html; charset="UTF-8" />
+    <link rel="stylesheet" type="text/css" href="style.css" >
+
+
+     <title>page 3</title>
+  </head>
+ 
+<script language = "JavaScript">
+  function getParameterByName(name, url) {
+    if (!url) url = window.location.href;
+    name = name.replace(/[\[\]]/g, '\\$&');
+    var regex = new RegExp('[?&]' + name + '(=([^&#]*)|&|#|$)'),
+                results = regex.exec(url);
+    if (!results) return null;
+     if (!results[2]) return '';
+     return decodeURIComponent(results[2].replace(/\+/g, ' '));
+  }
+  
+
+  var result = getParameterByName("result")
+  if (result != "correct") {
+    var password = "fucking";
+    var x = prompt("What is the answer ","");
+    if (x == password) {
+        alert("Correct");
+        window.location = "page3.html?result=correct";
+    }
+
+    else {
+        alert("Wrong");
+        window.location = "page2.html";
+    }
+  }
+</script>
+ <body  background="background.jpg">
+   <div class="row">
+
+
+  <div class="middle">
+     <center>
+  <img src="GermanicRunes.png">
+  </center>
+  <p align="center">Transliteration</p>
+<center>
+  <div class = "button">
+      <button><a href="page4.html"> Next </a></button>
+
+   </div>
+   <div class = "button">
+     <button><a href="page2.html"> Return </a></button>
+    <div class="activate"> </div>
+  </div>
+  </center>
+ 
+
+</div>
+ 
+  
+</body>
+</html>
